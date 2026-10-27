@@ -1,0 +1,32 @@
+<div class="container">
+    <h2 class="tituloprincipal">Livros emprestados Gustavo e Arthur</h2>
+    
+     <div class="form-group">
+        <label>Id:</label>
+        <input type="text" [(ngModel)]="id" placeholder="Seu ID">
+    </div>
+    
+    <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" [(ngModel)]="nome" placeholder="Seu nome">
+    </div>
+   
+    <div class="form-group">
+        <label>Titulo do Livro:</label>
+        <input type="text" [(ngModel)]="tituloLivro" placeholder="Titulo do Livro">
+    </div>
+
+    <div class="form-group">
+        <label>Devolução:</label>
+        <select [(ngModel)]="datasSelecionadas">
+            <option value="">Selecione</option>
+            <option *ngFor="let of of datasDisponiveis" [value]="of">{{ of }}</option>
+        </select>
+    </div>
+
+    <button (click)="cadastrar()">Cadastrar</button>
+
+    <br><br>
+
+    <a routerLink="/lista">Lista de Livros Emprestados</a>
+</div>
